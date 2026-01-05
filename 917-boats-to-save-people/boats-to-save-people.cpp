@@ -8,15 +8,13 @@ public:
         sort(people.begin(),people.end());
         while(i <= j){
             if(people[i] + people[j] <= limit){
-                boat++;
                 i++;
                 j--;
             }
-            
             else{
                 j--;
-                boat++;    
             }
+            boat++;
         }
         return boat;
     }
