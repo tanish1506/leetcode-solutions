@@ -10,7 +10,7 @@ public:
                 l++;
             }
             if((r-l+1) == k){
-                if(sum/k >= threshold){
+                if(sum >= k*threshold){
                     cnt++;
                 }
             }
