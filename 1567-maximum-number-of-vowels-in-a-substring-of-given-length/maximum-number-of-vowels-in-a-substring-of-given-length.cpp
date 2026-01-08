@@ -2,22 +2,19 @@ class Solution {
 public:
     int maxVowels(string s, int k) {
         int n = s.size();
-        int len = 0,maxlen = 0;
-        for(int i=0;i<k;i++){
-            if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'){
+        int r=0,l=0,len=0,maxlen = 0;
+        while(r<n){
+            if(s[r] == 'a' || s[r] == 'e' || s[r] == 'i' || s[r] == 'o' || s[r] == 'u'){
                 len++;
             }
-        }
-        maxlen = len;
-        for(int i=k;i<n;i++){
-            if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'){
-                len++;
+            if((r-l+1) > k){
+                if(s[l] == 'a' || s[l] == 'e' || s[l] == 'i' || s[l] == 'o' || s[l] == 'u'){
+                    len--;
+                }
+                l++;
             }
-            if(s[i-k] == 'a' || s[i-k] == 'e' || s[i-k] == 'i' || s[i-k] == 'o' || s[i-k] == 'u'){
-                len--;
-            }
-
-            maxlen = max(maxlen , len);
+            maxlen = max(maxlen,len);
+            r++;
         }
         return maxlen;
     }
