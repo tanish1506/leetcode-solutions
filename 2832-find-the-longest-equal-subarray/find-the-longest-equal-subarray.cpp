@@ -8,7 +8,7 @@ public:
             mp[nums[r]]++;
             maxf = max(maxf , mp[nums[r]]);
 
-            while((r-l+1) - maxf > k){
+            if((r-l+1) - maxf > k){
                 mp[nums[l]]--;
                 l++;
             }
