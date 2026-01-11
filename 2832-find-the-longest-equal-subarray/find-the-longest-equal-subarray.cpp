@@ -10,6 +10,7 @@ public:
 
             if((r-l+1) - maxf > k){
                 mp[nums[l]]--;
+                if(mp[nums[l]] == 0) mp.erase(nums[l]);
                 l++;
             }
             ans = max(ans,maxf);
