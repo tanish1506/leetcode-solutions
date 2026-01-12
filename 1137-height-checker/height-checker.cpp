@@ -1,7 +1,7 @@
 class Solution {
 public:
     int heightChecker(vector<int>& heights) {
-        vector<int> count(101,0);
+        int count[101] = {0};
         for(int i=0;i<heights.size();i++){
             count[heights[i]]++;
         }
