@@ -10,7 +10,8 @@ public:
                 left = mp[s[right]] + 1;
             }
             mp[s[right]] = right;
-            maxlen = max(maxlen, right-left+1);
+            maxlen = max(maxlen,right-left+1);
+
         }
         return maxlen;
     }
