@@ -14,11 +14,7 @@ public:
 
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(image[i][j] == 1){
-                    image[i][j] = 0;
-                }else{
-                    image[i][j] = 1;
-                }
+                image[i][j] ^= 1;
             }
         }
         return image;
