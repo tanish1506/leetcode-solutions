@@ -4,20 +4,19 @@ public:
         int n = matrix.size();
         int m = matrix[0].size();
 
-        int low=0,high=n*m-1;
-        while(low<=high){
-            int mid = low + (high-low)/2;
+        int left=0,right=n*m-1;
+        while(left<=right){
+            int mid = left+(right-left)/2;
             if(matrix[mid/m][mid%m] == target){
                 return true;
             }
             else if(matrix[mid/m][mid%m] < target){
-                low = mid+1;
+                left = mid+1;
             }
             else{
-                high = mid-1;
+                right = mid-1;
             }
         }
         return false;
-
     }
 };
