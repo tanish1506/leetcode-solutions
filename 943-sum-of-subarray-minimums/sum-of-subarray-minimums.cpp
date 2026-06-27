@@ -39,6 +39,6 @@ public:
 
             total = (total + (rgt * left * 1LL * arr[i]) % MOD) % MOD;
         }
-        return total;
+        return (int)total;
     }
 };
