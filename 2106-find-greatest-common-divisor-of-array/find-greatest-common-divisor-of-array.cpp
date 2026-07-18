@@ -1,18 +1,17 @@
 class Solution {
 public:
     int findGCD(vector<int>& nums) {
-        int mini = nums[0],maxi = 0;
-        for(int i=0;i<nums.size();i++){
-            if(mini >= nums[i]) mini = nums[i];
-
-            if(maxi <= nums[i]) maxi = nums[i];
-        }
-        int gcd=1;
-        for(int i = min(mini,maxi); i>=1;i--){
-            if(mini%i == 0 && maxi%i == 0){
+        int n = nums.size();
+        sort(nums.begin(),nums.end());
+        int small = nums[0];
+        int large = nums[n-1];
+        
+        for(int i=small;i>=0;i--){
+            if(small % i == 0 && large % i == 0){
                 return i;
             }
         }
-        return gcd;
+
+        return 1;
     }
 };
